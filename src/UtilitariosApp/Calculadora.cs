@@ -19,9 +19,20 @@ namespace UtilitariosApp
 
         public int Dividir(double a, double b)
         {
-            if(b==0) return (int)a;
-            var resultado = a / b;  
+            if (b == 0) return (int)a;
+            var resultado = a / b;
             return (int)Math.Ceiling(resultado);
+        }
+
+        public int SubtrairPositivoOuZero(int a, int b)
+        {
+            if (a < b) return 0;
+            return a - b;
+        }
+
+        public double PotenciaDeUmNumero(int @base, int expoente)
+        {
+            return Math.Pow(@base, expoente);
         }
     }
 }
