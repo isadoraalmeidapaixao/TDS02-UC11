@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection.Metadata.Ecma335;
 
 namespace UtilitariosApp
 {
@@ -12,6 +8,7 @@ namespace UtilitariosApp
         {
             return a + b;
         }
+
         public int Multiplicar(int a, int b)
         {
             return a * b;
@@ -20,19 +17,30 @@ namespace UtilitariosApp
         public int Dividir(double a, double b)
         {
             if (b == 0) return (int)a;
+
             var resultado = a / b;
             return (int)Math.Ceiling(resultado);
         }
 
         public int SubtrairPositivoOuZero(int a, int b)
         {
-            if (a < b) return 0;
-            return a - b;
+            return b > a ? 0 : a - b;
         }
 
         public double PotenciaDeUmNumero(int @base, int expoente)
         {
             return Math.Pow(@base, expoente);
+        }
+
+        // Crie 2 testes: um fato, e uma teoria
+        public double Raiz(int a)
+        {
+            if(a < 0)
+            {
+                throw new ArgumentException("Não é possível calcular raiz de 0 ou negativo!");
+            }
+
+            return Math.Sqrt(a);
         }
     }
 }
