@@ -17,7 +17,7 @@
 
         public string ObterInformacoes()
         {
-            return $"ID: {Id}\nNome: {Nome}\nEmail: {Email}\n Endereço: {Enderco.FormatarEndereco()}";
+            return $"ID: {Id}\nNome: {Nome}\nEmail: {Email}\nEndereço: {Enderco.FormatarEndereco()}";
         }
 
         public bool EmailValido()
