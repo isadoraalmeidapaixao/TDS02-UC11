@@ -44,17 +44,19 @@ namespace UtilitariosApp.Tests
         }
 
         [Fact]
-        public void ProcurarPorId_ComClienteExistente_DeveRetornarCliente()
+        public void ProcurarPorId_SeClienteExiste_DeveRetornarCliente()
         {
             var gerenciador = new GerenciadorClientes();
             var endereco = new Endereco("Rua B", 123, "São Paulo", "SP");
             var cliente = new Cliente(1, "Silva", "silva@mail.com", endereco);
             
             gerenciador.AdicionarCliente(cliente);
-            gerenciador.ProcurarPorId(1);
 
-            Assert.NotNull(cliente);
-            Assert.Equal(1, cliente.Id);
+            var clienteEncontrado = gerenciador.ProcurarPorId(1);
+
+
+            Assert.NotNull(clienteEncontrado);
+            Assert.Equal(1, clienteEncontrado.Id);
         }
     }
 }
